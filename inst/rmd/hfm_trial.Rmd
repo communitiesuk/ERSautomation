@@ -20,11 +20,21 @@ df_snapshot <- read_excel(input_path, sheet = "Table_R1(a)_-_RS_snapshot", skip 
 df_institutions <- read_excel(input_path, sheet = "Table_P2(a)_-_Left_institutions", skip = 3)
 df_month_rate <- read_excel(input_path, sheet = "Table_R1(d)_-_RS_month_rate", skip = 3)
 
+#B1
+df_month_longterm <- read_excel (input_path, sheet = "Table_B1_-_RS_monthly_long_term", skip = 3)
+
+
+
+
+
+
 knitr::opts_chunk$set(echo = TRUE)
 
 march24_month_eng <- as.numeric(df_month[1, "March 2024"])
 march23_month_eng <- as.numeric(df_month[1, "March 2023"])
 dec23_month_eng <- as.numeric(df_month[1, "December 2023"])
+
+
 
 march24_month_eng_rate <- as.numeric(df_month_rate[1, "March 2024"])
 march23_month_eng_rate <- as.numeric(df_month_rate[1, "March 2023"])
@@ -43,6 +53,9 @@ march23_snapshot_eng <- as.numeric(df_snapshot[1, "March 2023"])
 march24_institutions_eng <- as.numeric(df_institutions[1, "March 2024"])
 dec23_institutions_eng <- as.numeric(df_institutions[1, "December 2023"])
 
+march24_month_longterm <- as.numeric(df_month_longterm[1, "March 2024"])
+dec23_month_longterm <- as.numeric(df_month_longterm[1, "December 2023"])
+
 ```
 
 ## Ending Rough Sleeping Data Framework, March 2024
@@ -59,3 +72,173 @@ dec23_institutions_eng <- as.numeric(df_institutions[1, "December 2023"])
 
 ### Rare (R1)
 **`r march24_month_eng`** people sleeping rough over the month in March 2024 - up (`r round(abs(((march24_month_eng - march23_month_eng)/march23_month_eng)*100), digits = 0)`)% on March last year, and up(`r round(abs(((march24_month_eng - dec23_month_eng)/dec23_month_eng)*100), digits = 0)`)% since December 2023. `r march24_month_eng_rate` people per 100,000 sleeping rough over the month in March 2024 - up from `r march23_month_eng_rate` last year and `r dec23_month_eng_rate` in December 2023.
+
+
+### Brief (B1)
+
+**`r march24_month_longterm`** people sleeping rough over the month in March 2024 who are sleeping rough long term (`r round(abs((march24_month_longterm / march24_month_eng)*100), digits = 0)`% of total) – up `r round(abs(((march24_month_longterm - dec23_month_longterm) / dec23_month_longterm)*100), digits = 0)`% since December 2023.  
+
+
+
+
+<br>
+<br>
+
+
+# 7. Definitions
+
+**New people sleeping rough (P1)** 
+
+A person is considered ‘new’ if they have not been seen sleeping rough in the Local Authority in the 5 calendar years (60 months) preceding the date they were seen sleeping rough during the current reporting period. If a person was seen more than 5 years previously, they are to be counted as ‘New’. If there is no historical data available for the last 5 years, people seen sleeping rough for the first time should be counted as ‘New’ whilst a historical database is compiled. 
+
+Prior to May 2023, the definition was less specific in terms of time period, and a person was considered new if they were not known to local authority outreach teams and other support services. 
+
+<br>
+
+**People sleeping rough who have been discharged from an institution (P2)** 
+
+A person is counted as having left an institution recently if they report having been discharged from any of the below within the last 85 days (12 weeks + 1 day): 
+
+* Prisons (adult and youth) 
+* Other justice accommodation e.g. accommodation provided by the National Probation Service (i.e. Approved Premises) 
+* General and psychiatric hospitals 
+* Discharged from the UK Armed Forces 
+* Asylum support (previously ‘National Asylum Support Services Accommodation’) 
+
+<br>
+
+**People sleeping rough (R1)** 
+
+People sleeping rough are defined as:   
+
+* People sleeping, about to bed down (sitting on/in or standing next to their bedding) or bedded down in the open air (such as on the street, in tents, doorways, parks, bus shelters or encampments).  
+
+* People in buildings or other places not designed to for habitation (such as stairwells, barns, sheds, car parks, cars, derelict boats, stations or “bashes” which are makeshift shelters often comprised of cardboard boxes).  
+
+The definition does not include: 
+
+* People in hostels or shelters 
+* People in campsites or other sites used for recreational purposes or organised protest 
+* Squatters 
+* Travellers 
+
+**Bedded down** is taken to mean either lying down or sleeping. 
+
+**About to bed down** includes those who are sitting in/on or near a sleeping bag or other bedding. 
+
+This is the same definition as is used for the annual rough sleeping snapshot statistics. 
+
+The number of people sleeping rough on a single night is an estimated figure determined from outreach contacts, or from a ‘Point-in-Time’ snapshot.  
+
+The number of people sleeping rough over the course of the month is an estimated figure based on outreach contacts.  
+
+**People sleeping rough long term (B1)** 
+
+Long term rough sleeping is defined as the number of people seen recently (within the reporting month) who have been seen sleeping rough in 3 or more months out of the last 12 months (1 year). 
+
+**People returning to sleeping rough (NR1)** 
+
+A person is considered a ‘returner’ if they are seen sleeping rough again after no contact for 2 or more quarters (180 days), whichever is shorter, measured from the last date the person was seen. 
+
+<br>
+<br>
+
+## 8. Things you need to know
+
+* The Department for Levelling Up, Housing and Communities have been collecting monthly management information from all local authorities in England about the support for people sleeping rough and those at risk of sleeping rough, since May 2020, alongside the annual rough sleeping snapshot statistics. The indicators which are not part of the data framework are still available as data tables. 
+
+* On average, 95% of areas provide a response each month and for those areas that do not provide data, imputed figures based on previous latest management information has been used. 
+
+* This monthly management information, provided by local authorities, includes a more frequent although less robust estimate of people sleeping rough on a single night, compared to the official rough sleeping snapshot statistics. The official statistics are collated by outreach workers, local charities and community groups and are independently verified by Homeless Link. 
+
+* The management information also provides an estimate of the number of people sleeping rough over the course of the month in each local authority to better understand the flow of people sleeping rough. This figure is based on casework done by outreach teams and other service providers. 
+
+<br>
+<br>
+
+## 9. Technical notes
+
+<br>
+
+**9.1 Data tables and interactive dashboard**
+
+Twenty seven [accompanying tables](https://www.gov.uk/government/publications/support-for-people-sleeping-rough-in-england-march-2023/support-for-people-sleeping-rough-in-england-march-2023) are available alongside this release. These include information on the five new framework indicators, as well as information about accommodation offers for people sleeping rough, and information about medium and long term accommodation which are also collected as part of the monthly rough sleeping management information. 
+
+ 
+
+An [interactive dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDFiNWYyYjItMGI5Yi00ZmNhLThmYmQtMWU1NGM5NzRkMmI5IiwidCI6ImJmMzQ2ODEwLTljN2QtNDNkZS1hODcyLTI0YTJlZjM5OTVhOCJ9) enables users to explore the new framework indicators in more detail.  
+
+<br>
+
+### 9.2 Data quality and limitations 
+
+This management information provides more timely and more detailed data on rough sleeping and the support for rough sleepers compared to the annual rough sleeping snapshot.  
+
+The management information is collected via a regular survey to local authorities, which began in May 2020. Local authorities were required to provide data underpinning the new framework indicators from May 2023, although some indicators have been collected for longer as they were already part of the rough sleeping management information collection. All local authorities are required to complete the survey, which includes questions about rough sleeping, off the street accommodation, long term or repeat rough sleepers and medium or long-term accommodation. This management information provides more timely and more detailed data on rough sleeping and the support for rough sleepers compared to the annual rough sleeping snapshot. 
+
+Local authorities submit their management information via DLUHC’s [DELTA](https://delta.communities.gov.uk/login) online data collection system. The DELTA online data collection system includes in-built rules and validation checks to ensure the data provided is complete and accurate. 
+
+As well as the in-built validations via DELTA, DLUHC analysts also carry out a series of quality assurance checks including checks for outliers and comparing the information with other relevant data sources. 
+
+The data is not independently verified. It has been provided by local authorities. 
+
+The [Office for Statistics Regulation (OSR)](https://osr.statisticsauthority.gov.uk/) which is the regulatory arm of the [UK Statistics Authority](https://www.statisticsauthority.gov.uk/) completed a review of the very first [Support for people sleeping rough](https://osr.statisticsauthority.gov.uk/correspondence/ed-humpherson-to-sandra-tudor-support-for-people-rough-sleeping-management-information/) publication against the [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/). This review considered the value, quality and trustworthiness of these statistics in relation to the Code. The review recommendations are being taken forward. 
+
+
+**Voluntary compliance with the Code of Practice for Statistics**  
+
+The [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/) was published in February 2018 to set standards for organisations in producing and publishing official statistics and ensure that statistics serve the public good.   
+
+DLUHC’s Ending Rough Sleeping Data Framework release does not include official or official accredited statistics, as it is designated as management information, but the framework is used to monitor rough sleeping trends in England. This compliance statement outlines how we are voluntarily applying the Code of Practice for Statistics to ensure that the analytical outputs are trustworthy, of high quality and have public value. 
+
+**Trustworthiness**
+
+Trusted people, processes and analysis 
+
+
+|**Pillar**|**How this framework aligns with this pillar**| 
+|:------|:-------|
+|**T1 Honesty and integrity**| Data is analysed by professionally qualified and experienced data analysts - professional members of the GSS, GORS or GSR professions. Data is provided by local authorities and scrutinised by government rough sleeping advisers to monitor local approaches to ending rough sleeping.| 
+|**T2 Independent decision making and leadership**| The work is governed by the Analysis and Data Directorate in DLUHC, accountable to DLUHC’s Chief Analyst and the Head of Profession for Statistics.|
+
+
+<br>
+
+**High Quality**  
+
+Robust data, methods and processes  
+
+|**Pillar**|**How this framework aligns with this pillar**| 
+|:------|:-------|
+|**Q1 Suitable data sources**| Data is collected by local authorities, primarily through outreach activities. Data relies on self-disclosure or referrals from relevant agencies (e.g. the other government departments, Adult Social Care, or local refugee charities). In London, data is provided directly from CHAIN, which is a multi-agency database recording information about people seen rough sleeping by outreach teams. One aim of the framework is to encourage local authorities to link up with key partners to share data to better understand their rough sleeping populations. The commissioned research mentioned in “T4 Transparent processes and management” highlights how best to improve consistency in data and will feed into further guidance on improving data.| 
+|**Q2 Sound methods**| Data collection tools and processes are robustly designed and tested prior to use, learning lessons from previous Rough Sleeping Management Information data collections and best practice from across the government analytical community. An outline of the data process is available in the [latest release](https://www.gov.uk/government/publications/ending-rough-sleeping-data-framework-december-2023/ending-rough-sleeping-data-framework-december-2023#data-process).| 
+
+
+
+<br>
+<br>
+
+## 10. Enquiries
+
+**Media** 
+
+Telephone: 0303 444 1209
+
+Email: [newsdesk@levellingup.gov.uk](mailto:newsdesk@levellingup.gov.uk)
+
+**Statistical enquiries** 
+
+Telephone: 0303 444 2623
+
+Email: [roughsleepingstatistics@levellingup.gov.uk](mailto:roughsleepingstatistics@levellingup.gov.uk) 
+
+**Responsible analysts** 
+
+Jon White, Grace Harrington and Hudson Farley-Moore 
+
+
+
+Information on Official Statistics is available via the [UK Statistics Authority website.](https://www.statisticsauthority.gov.uk/) 
+
+Information about statistics at DLUHC is available via the [department’s website.](https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities/about/statistics)
+
