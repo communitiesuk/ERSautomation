@@ -21,7 +21,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
-<rect x='0.000000000000064' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+<rect x='0.00' y='0.00' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
 </g>
 <defs>
   <clipPath id='cpMzUuNDV8NTcwLjUyfDUuNDh8MzIxLjMx'>
@@ -143,11 +143,11 @@
 <text transform='translate(442.82,329.03) rotate(-90)' text-anchor='end' style='font-size: 11.00px;fill: #7F7F7F; font-family: "Arial";' textLength='45.28px' lengthAdjust='spacingAndGlyphs'>Jan 2024</text>
 <text transform='translate(488.36,329.03) rotate(-90)' text-anchor='end' style='font-size: 11.00px;fill: #7F7F7F; font-family: "Arial";' textLength='46.50px' lengthAdjust='spacingAndGlyphs'>Feb 2024</text>
 <text transform='translate(530.97,329.03) rotate(-90)' text-anchor='end' style='font-size: 11.00px;fill: #7F7F7F; font-family: "Arial";' textLength='46.49px' lengthAdjust='spacingAndGlyphs'>Mar 2024</text>
-<rect x='118.64' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8FAADC;' />
-<rect x='245.90' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #012169;' />
-<rect x='364.18' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #000000;' />
-<text x='140.69' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='99.02px' lengthAdjust='spacingAndGlyphs'>Returners (NR1)</text>
-<text x='267.95' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='90.04px' lengthAdjust='spacingAndGlyphs'>Long term (B1)</text>
-<text x='386.23' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='107.29px' lengthAdjust='spacingAndGlyphs'>New monthly (P1)</text>
+<rect x='115.90' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8FAADC;' />
+<rect x='243.16' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #012169;' />
+<rect x='361.44' y='404.47' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #000000;' />
+<text x='137.95' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='99.02px' lengthAdjust='spacingAndGlyphs'>Returners (NR1)</text>
+<text x='265.21' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='90.04px' lengthAdjust='spacingAndGlyphs'>Long term (B1)</text>
+<text x='383.49' y='417.23' style='font-size: 13.50px;fill: #222222; font-family: "Arial";' textLength='107.29px' lengthAdjust='spacingAndGlyphs'>New monthly (P1)</text>
 </g>
 </svg>
