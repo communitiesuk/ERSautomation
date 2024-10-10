@@ -1,5 +1,5 @@
 ---
-title: "Rough Sleeping Data Framework, June 2024"
+title: "Rough Sleeping Data Framework, X 2024"
 output: 
   word_document:
     reference_docx: "styles1.dotx"
@@ -12,7 +12,7 @@ params:
 ```{r setup, include=FALSE}
 
 # #Load the dataframes in from the latest tables
-input_path <- "Q:/ASCT/P005 Homelessness/008 Rough Sleeping/RS MI R/New monthly tables script/Git_Version/Publication_tables/Publication_tables240730.xlsx"
+input_path <- "Q:/ASCT/P005 Homelessness/008 Rough Sleeping/RS MI R/New monthly tables script/Git_Version/Publication_tables/Publication_tables241004.xlsx"
 
 df_month_new <- readxl::read_excel(input_path, sheet = "Table_P1(b)_-_RS_month_new", skip = 3)
 df_month <- readxl::read_excel(input_path, sheet = "Table_R1(b)_-_RS_month", skip = 3)
@@ -20,7 +20,14 @@ df_snapshot_new <- readxl::read_excel(input_path, sheet = "Table_P1(a)_-_RS_snap
 df_snapshot <- readxl::read_excel(input_path, sheet = "Table_R1(a)_-_RS_snapshot", skip = 3)
 df_institutions <- readxl::read_excel(input_path, sheet = "Table_P2(a)_-_Left_institutions", skip = 3)
 df_month_rate <- readxl::read_excel(input_path, sheet = "Table_R1(d)_-_RS_month_rate", skip = 3)
+df_accommodation <- readxl::read_excel(input_path, sheet ="Table_R2_-_RS_accommodation", skip =3)
 df_long_term <- readxl::read_excel(input_path, sheet = "Table_B1_-_RS_monthly_long_term", skip = 3)
+df_1_night <- readxl::read_excel(input_path, sheet = "Table_B2(a)_-_RS_1_night", skip = 3)
+df_2_nights <- readxl::read_excel(input_path, sheet = "Table_B2(b)_-_RS_2_nights", skip = 3)
+df_3_5_nights <- readxl::read_excel(input_path, sheet = "Table_B2(c)_-_RS_3_5_nights", skip = 3)
+df_6_10_nights <- readxl::read_excel(input_path, sheet = "Table_B2(d)_-_RS_6_10_nights", skip = 3)
+df_10_more_nights <- readxl::read_excel(input_path, sheet = "Table_B2(e)_-_RS_10_more_nights", skip = 3)
+df_unknown_nights <- readxl::read_excel(input_path, sheet = "Table_B2(f)_-_RS_unknown_nights", skip = 3)
 df_prison <- readxl::read_excel(input_path, sheet = "Table_P2(b)_-_RS_month_prison", skip = 3)
 df_asylum <- readxl::read_excel(input_path, sheet = "Table_P2(f)_-_left_asylum", skip = 3)
 df_hospital <- readxl::read_excel(input_path, sheet = "Table_P2(d)_-_left_hospital", skip = 3)
@@ -30,6 +37,7 @@ df_ukaf <- readxl::read_excel(input_path, sheet = "Table_P2(e)_-_left_UKAF", ski
 df_month_rate <- readxl::read_excel(input_path, sheet = "Table_R1(d)_-_RS_month_rate", skip = 3)
 df_snapshot_rate <- readxl::read_excel(input_path, sheet = "Table_R1(c)_-_RS_snapshot_rate", skip = 3)
 df_returners <- readxl::read_excel(input_path, sheet = "Table_NR1_-_RS_returners", skip = 3)
+df_prev_in_accomm <- readxl::read_excel(input_path, sheet = "Table_NR2_-_RS_prev_in_accomm", skip = 3)
 
 colnames(df_month_new) <- colnames(df_month)
 knitr::opts_chunk$set(echo = TRUE)
@@ -131,6 +139,7 @@ changes(df_ukaf, env = env1)
 changes(df_month_rate, env = env1)
 changes(df_snapshot_rate, env = env1)
 changes(df_returners, env = env1)
+#changes(df_prev_in_accomm, env = env1)
 
 #Function to work out increase or decrease
 up_down <- function(num1, num2){
@@ -204,6 +213,8 @@ sign <- function(num){
 
 #### Non-recurring (NR1)
 **`r get("this_month_df_returners", envir = env1)`** people sleeping rough over the month in `r this_month` who are returning to sleeping rough (`r round(((get("this_month_df_returners", envir = env1))/get("this_month_df_month", envir = env1))*100, digits = 0)`% of total people sleeping rough over the month) - `r sign(get("annual_change_df_returners", envir = env1))` `r round(((get("annual_change_df_returners", envir = env1))/get("last_year_df_returners", envir = env1))*100, digits = 0)`%  since `r last_year`.
+
+
 
 ::: 
 
